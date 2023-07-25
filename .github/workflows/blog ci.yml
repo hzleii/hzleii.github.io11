@@ -21,12 +21,12 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: latest
-#        extended: true
+        hugo-version: 'latest'
+        extended: true
     # 步骤3 打包
     - name: build
       run: |
-        hugo # 此处是构建脚本
+        hugo  # 此处是构建脚本
       
     # 步骤6 部署项目
     - name: deploy
