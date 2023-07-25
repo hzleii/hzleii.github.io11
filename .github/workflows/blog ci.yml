@@ -14,7 +14,7 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
     
     # 步骤1 拉取仓库代码
     - name: Checkout # 步骤名称
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       with:
         submodules: true # Fetch Hugo themes (true OR recursive)
     # 步骤2 给当前服务器安装Hugo
@@ -22,10 +22,11 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: latest
-        extended: true
+#        extended: true
     # 步骤3 打包
     - name: build
-      run: hugo --minify # 此处是构建脚本
+      run: |
+        hugo --minify # 此处是构建脚本
       
     # 步骤6 部署项目
     - name: deploy
