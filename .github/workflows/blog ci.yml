@@ -25,14 +25,14 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
     #- name: build
     #  run: hugo --minify # 此处是构建脚本
     - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
+      id: pages
+      uses: actions/configure-pages@v3
     - name: Build
-        run: hugo --gc --minify --baseURL ${{ steps.pages.outputs.base_url }}
+      run: hugo --gc --minify --baseURL ${{ steps.pages.outputs.base_url }}
     - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./public
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: ./public
       
     # 步骤6 部署项目
     - name: deploy
