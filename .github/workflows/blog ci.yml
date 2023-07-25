@@ -14,9 +14,7 @@ jobs: # 构建的任务，一个工作流有多个构建任务，
     
     # 步骤1 拉取仓库代码
     - name: Checkout # 步骤名称
-      uses: actions/checkout@v3
-      with:
-        submodules: true # Fetch Hugo themes (true OR recursive)
+      uses: actions/checkout@v2 
     # 步骤2 给当前服务器安装Hugo
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
